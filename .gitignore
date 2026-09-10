@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+.env
+.env.*
+
+data/uploads/*
+data/chroma/*
+chroma_db/
+doc_meta.json
+
+.streamlit/secrets.toml
+.DS_Store
