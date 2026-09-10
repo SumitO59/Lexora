@@ -1,10 +1,12 @@
-
 from pathlib import Path
 
 from docx import Document as DocxDocument
 from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from openpyxl import load_workbook
 from pypdf import PdfReader
+
+from .config import CHUNK_SIZE, CHUNK_OVERLAP
 
 
 SUPPORTED_EXTENSIONS = {
@@ -14,6 +16,16 @@ SUPPORTED_EXTENSIONS = {
     ".md",
     ".xlsx",
 }
+
+
+def get_splitter() -> RecursiveCharacterTextSplitter:
+    """Create the text splitter used for document chunking."""
+
+    return RecursiveCharacterTextSplitter(
+        chunk_size=CHUNK_SIZE,
+        chunk_overlap=CHUNK_OVERLAP,
+        separators=["\n\n", "\n", ". ", " ", ""],
+    )
 
 
 def load_document(file_path: str | Path) -> list[Document]:
