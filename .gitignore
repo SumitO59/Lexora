@@ -13,5 +13,5 @@ doc_meta.json
 
 .streamlit/secrets.toml
 .DS_Store
-
+.Lexora_Project_Plan_and_Documentation.md
 data/document_metadata.json
