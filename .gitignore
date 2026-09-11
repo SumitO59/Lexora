@@ -13,3 +13,5 @@ doc_meta.json
 
 .streamlit/secrets.toml
 .DS_Store
+
+data/document_metadata.json
